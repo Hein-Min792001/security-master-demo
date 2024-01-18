@@ -1,0 +1,53 @@
+#showcase{
+    background: url("https://cdn1.bookmanager.com/i/9926224/phonto___2022_12_04T204555.408.JPG");
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 300px;
+    background-position: center;
+    position: relative;
+    color: rgba(247, 114, 8, 0.8);
+}
+#showcase #header{
+    z-index: 2;
+}
+#showcase #book{
+    border-radius: 15px;
+}
+#showcase #header h3,h1{
+    display: inline;
+    text-align: center;
+    margin: auto;
+    font-family: 'Gabriela', serif;
+    background: rgba(243, 243, 243, 0.8);
+    border-radius: 5px;
+    /*padding: 0;*/
+}
+#showcase #header p{
+    display: inline;
+    text-align: center;
+    font-family: 'Gabriela', serif;
+    background: rgba(243, 243, 243, 0.8);
+    border-radius: 5px;
+    padding: 0;
+    width: fit-content;
+    margin: auto;
+}
+#footer .nav-link{
+    text-decoration: none!important;
+    color: white!important;
+}
+#cat-img{
+    height: 400px;
+    width: 350px;
+}
+#best-seller1,#best-seller2{
+    width: 500px;
+    height: 400px;
+}
+#quotes i{
+    opacity: 0.3;
+}
+.img-thumbnail{
+    height: 300px;
+    width: 300px;
+}
