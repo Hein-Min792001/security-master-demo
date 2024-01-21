@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html th:replace="layout/masterLayout :: layout(~{::main})" xmlns:th="http://www.thymeleaf.org">
+<body class="bg-light justify-content-center">
+<main role="main">
+    <div class="container mt-5">
+        <h6 class="text-center text-danger">Forbidden Error.<br>
+        You do not have access to this page!</h6>
+        <a th:href="@{/}" class="btn btn-warning btn-outline-success">GoToHome</a>
+    </div>
+</main>
+</body>
+</html>

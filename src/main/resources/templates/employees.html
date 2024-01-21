@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html th:replace="layout/masterLayout :: layout(~{::main})" xmlns:th="http://www.thymeleaf.org">
+<body class="bg-light">
+<main role="main">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Employees</h3>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            <thead>
+                            <th>
+                                <td>Id</td>
+                                <td>FirstName</td>
+                                <td>LastName</td>
+                                <td>PhoneNumber</td>
+                                <td>Address</td>
+                                <td>CubicleNo</td>
+                                <td>Action</td>
+                            </th>
+                            </thead>
+                            <tbody>
+                            <tr th:each="employee : ${employees}">
+                                <td th:text="${employee.id}"></td>
+                                <td th:text="${employee.firstName}"></td>
+                                <td th:text="${employee.lastName}"></td>
+                                <td th:text="${employee.phoneNumber}"></td>
+                                <td th:text="${employee.address}"></td>
+                                <td th:text="${employee.cubicleNo}"></td>
+                                <td>
+                                    <a th:href="@{'/employee/delete-employee?id='+${employee.id}}"
+                                    class="btn btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <a th:href="@{/employee/create-employee}" class="btn btn-success">Create Employee</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

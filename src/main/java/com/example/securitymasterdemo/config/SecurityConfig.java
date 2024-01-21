@@ -23,8 +23,17 @@ public class SecurityConfig {
                     .permitAll()
                     .requestMatchers("/customer/list-customer")
                     .hasAnyRole("CUSTOMER_READ", "SUPER_ADMIN")
-                    .requestMatchers("/customer/**")
+                    .requestMatchers("/employee/**")
+                    .hasAnyRole("EMPLOYEE_ADMIN","SUPER_ADMIN")
+                    .requestMatchers("/department/list-departments","/department/create-department",
+                            "/department/save-department")
+                    .hasAnyRole("DEPARTMENT_READ", "DEPARTMENT_WRITE","SUPER_ADMIN")
+                    .requestMatchers("/customer/**","/employee/**","/department/**")
                     .hasRole("SUPER_ADMIN")
+//                    .requestMatchers("/employee/**")
+//                    .hasRole("EMPLOYEE_ADMIN")
+//                    .requestMatchers("/department/**")
+//                    .hasAnyRole("DEPARTMENT_READ", "DEPARTMENT_WRITE")
                     .anyRequest().authenticated();
         });
         http.csrf(c -> c.disable());
